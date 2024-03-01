@@ -14,17 +14,26 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: Echo Welcome Message
+                  name: Welcome
                   identifier: Echo_Welcome_Message
                   spec:
                     shell: Sh
-                    command: echo "Welcome to Harness CI"
+                    command: echo "Welcome to Harness Java App Deployment"
+              - step:
+                  type: Plugin
+                  name: maven_plugin
+                  identifier: maven_plugin
+                  spec:
+                    connectorRef: umaran1218
+                    image: plugins/maven
+                  description: maven_plugin
           platform:
             os: Linux
             arch: Amd64
           runtime:
             type: Cloud
             spec: {}
+        description: ""
   properties:
     ci:
       codebase:
