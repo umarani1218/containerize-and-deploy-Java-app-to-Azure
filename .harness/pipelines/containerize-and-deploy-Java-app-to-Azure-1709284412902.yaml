@@ -1,0 +1,33 @@
+pipeline:
+  name: Build containerize-and-deploy-Java-app-to-Azure
+  identifier: Build_containerize_and_deploy_Java_app_to_Azure_1709284417985
+  projectIdentifier: Java_app_aks
+  orgIdentifier: default
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Echo Welcome Message
+                  identifier: Echo_Welcome_Message
+                  spec:
+                    shell: Sh
+                    command: echo "Welcome to Harness CI"
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github
+        repoName: containerize-and-deploy-Java-app-to-Azure
+        build: <+input>
