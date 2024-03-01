@@ -4,8 +4,8 @@
 FROM maven:3.6.0-jdk-11-slim AS build
 WORKDIR /build
 COPY Project/Airlines/pom.xml .
-COPY src ./src
-COPY web ./web
+COPY Project/Airlines/src ./src
+COPY Project/Airlines/web ./web
 RUN mvn clean package
 
 #
