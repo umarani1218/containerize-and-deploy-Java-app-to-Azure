@@ -3,7 +3,7 @@
 #
 FROM maven:3.6.0-jdk-11-slim AS build
 WORKDIR /build
-COPY pom.xml .
+COPY Project/Airlines/pom.xml .
 COPY src ./src
 COPY web ./web
 RUN mvn clean package
