@@ -20,19 +20,19 @@ pipeline:
                     shell: Sh
                     command: echo "Welcome to Harness Java App Deployment"
               - step:
-                  type: Run
-                  name: mvn_install
-                  identifier: mvn_install
+                  type: BuildAndPushDockerRegistry
+                  name: build_push_java_app
+                  identifier: build_push_java_app
                   spec:
-                    shell: Sh
-                    command: |-
-                      cd Project/Airlines
-                      mvn clean install
+                    connectorRef: umaran1218
+                    repo: https://index.docker.io/v2/
+                    tags:
+                      - dev
           platform:
             os: Linux
             arch: Amd64
           runtime:
-            type: Docker
+            type: Cloud
             spec: {}
         description: ""
   properties:
