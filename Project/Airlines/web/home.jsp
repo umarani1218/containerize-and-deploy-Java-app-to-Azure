@@ -53,7 +53,7 @@
 		<div class="carousel-item active">
 			<img class="d-block" src="./assets/img/main.jpg" alt="First slide">
 			<div class="carousel-caption d-md-block text-top">
-				<h1>Welcome to Airlines!</h1>
+				<h1>Welcome to Harness Pipeline Airlines!</h1>
 			</div>
 		</div>
 		
