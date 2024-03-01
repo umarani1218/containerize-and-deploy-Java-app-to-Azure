@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flightbookingsystemsample
-        image: docker.io/umaran1218/flightbookingsystemsample:version1.0 
+        image: docker.io/umaran1218/flightbookingsystemsample:dev
         resources:
           requests:
             cpu: "1"
