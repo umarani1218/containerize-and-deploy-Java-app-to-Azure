@@ -29,6 +29,29 @@ pipeline:
                     tags:
                       - dev
                     dockerfile: Project/Airlines/Dockerfile
+              - step:
+                  type: Run
+                  name: az_login
+                  identifier: az_login
+                  spec:
+                    shell: Sh
+                    command: az login
+              - step:
+                  type: Run
+                  name: install_aks_cli
+                  identifier: install_aks_cli
+                  spec:
+                    shell: Sh
+                    command: az aks install-cli
+              - step:
+                  type: Run
+                  name: aks_deploy
+                  identifier: aks_deploy
+                  spec:
+                    shell: Sh
+                    command: |-
+                      az aks get-credentials --resource-group epp_rg --name eppaks
+                      kubectl apply -f Project/Airlines/deployment.yml
           platform:
             os: Linux
             arch: Amd64
