@@ -28,6 +28,7 @@ pipeline:
                     repo: https://index.docker.io/v2/
                     tags:
                       - dev
+                    dockerfile: Project /Airlines/Dockerfile
           platform:
             os: Linux
             arch: Amd64
