@@ -20,13 +20,14 @@ pipeline:
                     shell: Sh
                     command: echo "Welcome to Harness Java App Deployment"
               - step:
-                  type: Plugin
-                  name: maven_plugin
-                  identifier: maven_plugin
+                  type: Run
+                  name: mvn_install
+                  identifier: mvn_install
                   spec:
-                    connectorRef: umaran1218
-                    image: plugins/maven
-                  description: maven_plugin
+                    shell: Sh
+                    command: |-
+                      cd Project/Airlines
+                      mvn clean install
           platform:
             os: Linux
             arch: Amd64
