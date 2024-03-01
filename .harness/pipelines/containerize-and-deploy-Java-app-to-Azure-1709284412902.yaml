@@ -25,7 +25,7 @@ pipeline:
                   identifier: build_push_java_app
                   spec:
                     connectorRef: umaran1218
-                    repo: https://hub.docker.com/repositories/umaran1218
+                    repo: umaran1218/flightbookingsystemsample
                     tags:
                       - dev
                     dockerfile: Project/Airlines/Dockerfile
