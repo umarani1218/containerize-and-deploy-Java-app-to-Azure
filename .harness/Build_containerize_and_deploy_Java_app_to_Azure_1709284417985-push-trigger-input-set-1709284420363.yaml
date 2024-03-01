@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_containerize_and_deploy_Java_app_to_Azure_1709284417985-push-trigger-input-set
+  identifier: Build_containerize_and_deploy_Java_app_to_Azure_1709284417985pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Java_app_aks
+  pipeline:
+    identifier: Build_containerize_and_deploy_Java_app_to_Azure_1709284417985
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
