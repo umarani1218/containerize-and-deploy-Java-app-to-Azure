@@ -51,7 +51,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       az aks get-credentials --resource-group epp-uma --name epp-aks
-                      helm install epp-uma java-app/ --values java-app/values.yaml
+                      helm install epp-uma Project/Airlines/java-app/ --values Project/Airlines/java-app/values.yaml
           platform:
             os: Linux
             arch: Amd64
