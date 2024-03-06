@@ -45,13 +45,13 @@ pipeline:
                     command: az aks install-cli
               - step:
                   type: Run
-                  name: aks_deploy
+                  name: aks_helm_deploy
                   identifier: aks_deploy
                   spec:
                     shell: Sh
                     command: |-
                       az aks get-credentials --resource-group epp_rg --name eppaks
-                      kubectl apply -f Project/Airlines/deployment.yml
+                      helm install epp-uma java-app/ --values java-app/values.yaml
           platform:
             os: Linux
             arch: Amd64
